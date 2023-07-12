@@ -1,7 +1,7 @@
 #a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p
 from flask import Flask, render_template, request, redirect, session, send_file, make_response
 import sqlite3
-from docx import Document
+#from docx import Document
 import io 
 
 
@@ -137,7 +137,7 @@ def viewcode_category(category_filter):
 
     return render_template('viewcode.html', problems=problems, categories=categories, category_filter=category_filter)
 
-
+'''
 @app.route('/download/docx', methods=['POST'])
 def download_docx():
     conn = sqlite3.connect('coding_problems.db')
@@ -172,7 +172,7 @@ def download_docx():
     response.headers['Content-type'] = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 
     return response
-
+'''
 
 
 if __name__ == '__main__':
