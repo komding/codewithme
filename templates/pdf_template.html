@@ -1,0 +1,45 @@
+<!-- pdf_template.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Problems</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h2 {
+            margin-bottom: 10px;
+        }
+        
+        .problem {
+            margin-bottom: 20px;
+        }
+        
+        .problem h3 {
+            margin-top: 0;
+        }
+        
+        .problem p {
+            margin-top: 0;
+        }
+        
+        .problem pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>Saved Coding Problems</h2>
+    {% for problem in problems %}
+        <div class="problem">
+            <h3>{{ problem[1] }}</h3>
+            <p>{{ problem[2] }}</p>
+            <pre>{{ problem[3] }}</pre>
+        </div>
+    {% endfor %}
+</body>
+</html>
