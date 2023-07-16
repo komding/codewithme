@@ -23,6 +23,7 @@
         width: 100%;
         padding: 10px;
         margin-bottom: 10px;
+        margin-top: 10px;
         font-size: 16px;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -66,10 +67,23 @@
         .delete-form {
             display: inline-block;
         }
+        .view-code-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+      
+
+        }
     </style>
 </head>
 <body>
     <h1>Code With Me</h1>
+    <a href="/viewcode" class="view-code-button">go to ViewCode</a>
+    <br>
     <form method="POST" action="/codewithme">
         <input type="text" name="problem_name" placeholder="Problem Name" required><br>
         <textarea rows="15" cols="100" name="problem_description" placeholder="Problem Description" required></textarea><br>
@@ -95,7 +109,7 @@
     {% for problem in problems %}
         <div class="problem">
             <h3>{{ problem[1] }}</h3>
-            <p>{{ problem[2] }}</p>
+            <pre>{{ problem[2] }}</pre>
             <pre>{{ problem[3] }}</pre>
             <form method="POST" action="/delete/{{ problem[0] }}" class="delete-form">
                 <input type="submit" value="Delete">

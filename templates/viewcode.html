@@ -83,10 +83,20 @@
             text-decoration: none;
             border-radius: 4px;
         }
+        .codewithme_button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
     <h2>Saved Problems:</h2>
+    <a href="/codewithme" class="codewithme_button">go to codewithme</a>
     <div class="navigation">
         <h3>Categories:</h3>
         <ul>
@@ -102,7 +112,7 @@
         {% if not category_filter or problem[4] == category_filter %}
             <div class="problem">
                 <h3>{{ problem[1] }}</h3>
-                <p>{{ problem[2] }}</p>
+                <pre>{{ problem[2] }}</pre>
                 <pre>{{ problem[3] }}</pre>
             </div>
         {% endif %}
