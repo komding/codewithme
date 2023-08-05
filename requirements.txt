@@ -1,3 +1,4 @@
 flask
-docx
+pandas
+joblib
 gunicorn
