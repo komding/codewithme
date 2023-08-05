@@ -1,11 +1,13 @@
 import pandas as pd
 from flask import Flask, render_template, request
 import joblib
+import pickle
 
 app = Flask(__name__)
 
 # Load the model
-model = joblib.load('hpp.pkl')
+with open("hpp.pkl", "rb") as file:
+    model = pickle.load(file)
 
 # Load and prepare the prediction_values.csv
 data = pd.read_csv('prediction_values.csv')
